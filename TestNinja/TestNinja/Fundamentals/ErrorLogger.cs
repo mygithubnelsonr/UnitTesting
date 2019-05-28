@@ -18,9 +18,17 @@ namespace TestNinja.Fundamentals
             // Write the log to a storage
             // ...
 
+            // if you are outsource this error handler to a protected virtual void
+            // the tests are still working
+            //ErrorLogged?.Invoke(this, Guid.NewGuid());
 
-            ErrorLogged?.Invoke(this, Guid.NewGuid());
+            OnErrorLogged(Guid.NewGuid());
 
+        }
+
+        protected virtual void OnErrorLogged(Guid errorId)
+        {
+            ErrorLogged?.Invoke(this, errorId);
         }
     }
 }

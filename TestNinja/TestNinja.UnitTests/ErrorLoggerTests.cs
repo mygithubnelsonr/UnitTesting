@@ -47,5 +47,13 @@ namespace TestNinja.UnitTests
             logger.Log("a");
             Assert.That(id, Is.Not.EqualTo(Guid.Empty));
         }
+
+        // do not test private or protected methods
+        //[Test]
+        //public void OnErrorLogged_WhenCalled_RaiseEvent()
+        //{
+        //    logger.OnErrorLogged();
+        //    Assert.That(true);
+        //}
     }
 }

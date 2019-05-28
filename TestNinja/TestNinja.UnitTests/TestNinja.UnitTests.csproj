@@ -54,8 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerControllerTests.cs" />
+    <Compile Include="DemeritPointsCalculatorTests.cs" />
     <Compile Include="ErrorLoggerTests.cs" />
     <Compile Include="FormatAsBoldTest.cs" />
+    <Compile Include="FizzBuzzTests.cs" />
     <Compile Include="MathTests.cs" />
     <Compile Include="ReservationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
