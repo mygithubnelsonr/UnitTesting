@@ -16,7 +16,7 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
-        public void Log_WhenCalled_SetTheLastErrorProperty()
+        public void ErrorLogger_Log_WhenCalled_SetTheLastErrorProperty()
         {
             logger.Log("abc");
             Assert.That(logger.LastError, Is.EqualTo("abc"));
@@ -26,7 +26,7 @@ namespace TestNinja.UnitTests
         [TestCase(null)]
         [TestCase("")]
         [TestCase(" ")]
-        public void Log_InvalideError_ThrowArgumentNullExeption(string error)
+        public void ErrorLogger_Log_InvalideError_ThrowArgumentNullExeption(string error)
         {
             // logger.Log(error); will throw an exeption and the test will fail
 
@@ -38,7 +38,7 @@ namespace TestNinja.UnitTests
 
         // testing a method that raises an error
         [Test]
-        public void Log_ValidError_RaiseErrorloggedEvent()
+        public void ErrorLogger_Log_ValidError_RaiseErrorloggedEvent()
         {
             var id = Guid.Empty;
 
