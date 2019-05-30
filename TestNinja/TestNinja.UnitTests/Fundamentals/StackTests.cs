@@ -1,16 +1,17 @@
 ﻿using NUnit.Framework;
+using TestNinja.Fundamentals;
 
-namespace TestNinja.UnitTests
+namespace TestNinja.UnitTests.Fundamentals
 {
     [TestFixture]
     public class StackTests
     {
-        private Fundamentals.Stack<string> stack;
+        private Stack<string> stack;
 
         [SetUp]
         public void SetUp()
         {
-            stack = new Fundamentals.Stack<string>();
+            stack = new Stack<string>();
         }
 
         [Test]

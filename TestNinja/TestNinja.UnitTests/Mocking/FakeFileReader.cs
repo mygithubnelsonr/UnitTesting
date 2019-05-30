@@ -6,7 +6,7 @@ namespace TestNinja.UnitTests
     {
         public string Read(string path)
         {
-            return "FakeFileReader Read Text";
+            return "";
         }
     }
 }

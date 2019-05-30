@@ -8,19 +8,65 @@ namespace TestNinja.Mocking
 {
     public class VideoService
     {
+        // public string ReadVideoTitle()   // original method
+        // outsource that to an external FileReader class with Interface
+        // var str = File.ReadAllText("video.txt"); -> mocking, filereader.cs
+
+        #region Dependency Injection via Method Parameter
+        //public string ReadVideoTitle(IFileReader fileReader)
+        //{
+        //    var str = fileReader.Read("video.txt");
+        //    var video = JsonConvert.DeserializeObject<Video>(str);
+        //    if (video == null)
+        //        return "Error parsing the video.";
+        //    return video.Title;
+        //}
+        #endregion
+
+        #region Dependency Injection via Properties
+        //public IFileReader FileReader { get; set; }
+
+        //public VideoService()
+        //{
+        //    FileReader = new FileReader();
+        //}
+        #endregion
+
+        #region Dependency Injection via Constructor
+        private IFileReader _fileReader;
+
+        //public VideoService()
+        //{
+        //    _fileReader = new FileReader();
+        //}
+
+        public VideoService(IFileReader fileReader = null)
+        {
+            _fileReader = fileReader ?? new FileReader();
+        }
+        #endregion
+
+        #region Dependemcy Injection via Properties
+        //public string ReadVideoTitle()
+        //{
+        //    var str = FileReader.Read("video.txt");
+        //    var video = JsonConvert.DeserializeObject<Video>(str);
+        //    if (video == null)
+        //        return "Error parsing the video.";
+        //    return video.Title;
+        //}
+        #endregion
+
+        #region Dependemcy Injection via Constructor
         public string ReadVideoTitle()
         {
-            // outsource that to an external FileReader class with Interface
-            //var str = File.ReadAllText("video.txt");
-
-            var str = new FileReader().Read("video.txt");
-
-
+            var str = _fileReader.Read("video.txt");
             var video = JsonConvert.DeserializeObject<Video>(str);
             if (video == null)
                 return "Error parsing the video.";
             return video.Title;
         }
+        #endregion
 
         public string GetUnprocessedVideosAsCsv()
         {

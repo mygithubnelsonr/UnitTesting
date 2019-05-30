@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using TestNinja.Fundamentals;
-namespace TestNinja.UnitTests
+
+namespace TestNinja.UnitTests.Fundamentals
 {
     [NUnit.Framework.TestFixture]
     public class CustomerControllerTests

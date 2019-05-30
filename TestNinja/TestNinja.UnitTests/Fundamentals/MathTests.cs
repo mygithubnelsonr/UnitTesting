@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
-using System.Linq;
 using TestNinja.Fundamentals;
 
-namespace TestNinja.UnitTests
+namespace TestNinja.UnitTests.Fundamentals
 {
     [TestFixture]
     public class MathTests
@@ -77,7 +76,7 @@ namespace TestNinja.UnitTests
             //Assert.That(result, Does.Contain(3));
             //Assert.That(result, Does.Contain(5));
 
-            Assert.That(result, Is.EquivalentTo(new[] {1, 3, 5}));
+            Assert.That(result, Is.EquivalentTo(new[] { 1, 3, 5 }));
 
             // other Asserts
             Assert.That(result, Is.Ordered);    // test if the result is sorted by the method
