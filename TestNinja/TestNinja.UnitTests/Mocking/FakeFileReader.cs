@@ -1,6 +1,8 @@
 ﻿using TestNinja.Mocking;
 
-namespace TestNinja.UnitTests
+// the FileReader Class is not longer needed if Nuget Package Moq is installed
+// changed the namespace instade to delete this class
+namespace TestNinja.UnitTests.NotLongerNeeded
 {
     public class FakeFileReader : IFileReader
     {
